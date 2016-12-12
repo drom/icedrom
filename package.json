@@ -1,0 +1,33 @@
+{
+  "name": "icedrom",
+  "version": "0.1.0",
+  "description": "FPGA schematic rendering",
+  "main": "lib/",
+  "scripts": {
+    "test": "eslint lib/*.js",
+    "build": "browserify demo/icedrom.js > build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drom/icedrom.git"
+  },
+  "keywords": [
+    "FPGA"
+  ],
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drom/icedrom/issues"
+  },
+  "homepage": "https://github.com/drom/icedrom#readme",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.12.0",
+    "esprima": "^3.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "onml": "^0.4.0",
+    "tspan": "^0.1.4"
+  }
+}
