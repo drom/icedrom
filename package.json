@@ -4,7 +4,7 @@
   "description": "FPGA schematic rendering",
   "main": "lib/",
   "scripts": {
-    "test": "eslint lib/*.js",
+    "test": "eslint lib/ test/ && istanbul cover ./node_modules/mocha/bin/_mocha test",
     "build": "browserify demo/icedrom.js > build/app.js"
   },
   "repository": {
