@@ -6,7 +6,7 @@ var lut4 = require('../lib/lut'),
     onml = require('onml');
 
 function toString2_16 (num) {
-    var res = '0'.repeat(16);
+    var res = '0000000000000000';
     res += num.toString(2);
     res = res.slice(-16);
     res = res.slice(0,4) +
