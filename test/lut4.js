@@ -1,6 +1,7 @@
 'use strict';
 
 var lut4 = require('../lib/lut'),
+    lut4cache = require('../lib/lut4cache'),
     fs = require('fs'),
     svg = require('../demo/svg'),
     onml = require('onml');
@@ -51,7 +52,14 @@ var inits = [
     27030, // XOR
 
     0x4eee, // 0b0100 1110 1100 1100,
-    63743
+    63743,
+    61168,
+    15530,
+    0xcaca, // mux
+    0x4f4f,
+    43808,
+    52426,
+    0xf800
 ];
 
 describe('lut4', function () {
@@ -63,7 +71,7 @@ describe('lut4', function () {
         },
             ['style', { type: 'text/css' },
                 '<![CDATA[' +
-                ' .gate { fill: #ffb; stroke: #000; stroke-linecap: round }' +
+                ' .gate { fill: #ff0; stroke: #000; stroke-linecap: round }' +
                 ' .gate:hover { stroke: #00f; stroke-width: 3px }' +
                 ' .bbox { fill: #bbb; stroke: #000 }' +
                 ' .bbox:hover { stroke: #00f; stroke-width: 3px }' +
@@ -71,11 +79,15 @@ describe('lut4', function () {
                 ']]>'
             ]
         ];
+        var cache = lut4cache();
         inits.forEach(function (data, i) {
+            if (cache[data] === undefined) {
+                cache[data] = lut(data);
+            }
             res.push(['g', {
                 transform: 'translate(32,' + (32 * i) + ')'
             },
-                lut(data),
+                cache[data],
                 ['text', { x: 96, y: 24 }, toString2_16(data)]
             ]);
         });
