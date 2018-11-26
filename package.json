@@ -22,12 +22,12 @@
   "homepage": "https://github.com/drom/icedrom#readme",
   "devDependencies": {
     "browserify": "^13.1.1",
-    "chai": "^3.5.0",
-    "eslint": "^2.x",
-    "esprima": "^3.1.2",
+    "chai": "^4.2.0",
+    "eslint": "^3.x",
+    "esprima": "^4.0.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
+    "mocha": "^5.2.0",
     "onml": "^0.4.0",
-    "tspan": "^0.1.4"
+    "tspan": "^0.3.6"
   }
 }
