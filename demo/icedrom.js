@@ -3,7 +3,7 @@
 var stringify = require('onml/lib/stringify'),
     arizona = require('./arizona'),
     dropzone = require('./dropzone'),
-    fpga = require('../lib'),
+    lib = require('../lib'),
     svg = require('./svg');
 
 var icedrom = document.getElementById('icedrom');
@@ -21,7 +21,7 @@ arizona()
     .listen(icedrom)
     .onfile(function (data, name) {
         var mySVG = svg(
-            fpga({
+            lib.fpga({
                 fname: name,
                 body: JSON.parse(data)
             })

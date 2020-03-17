@@ -69,15 +69,15 @@ describe('lut4', function () {
             w: 320,
             h: 32 * inits.length
         },
-            ['style', { type: 'text/css' },
-                '<![CDATA[' +
-                ' .gate { fill: #ff0; stroke: #000; stroke-linecap: round }' +
-                ' .gate:hover { stroke: #00f; stroke-width: 3px }' +
-                ' .bbox { fill: #bbb; stroke: #000 }' +
-                ' .bbox:hover { stroke: #00f; stroke-width: 3px }' +
-                ' text { font-family: "monospace" }' +
-                ']]>'
-            ]
+        ['style', { type: 'text/css' },
+            '<![CDATA[' +
+            ' .gate { fill: #ff0; stroke: #000; stroke-linecap: round }' +
+            ' .gate:hover { stroke: #00f; stroke-width: 3px }' +
+            ' .bbox { fill: #bbb; stroke: #000 }' +
+            ' .bbox:hover { stroke: #00f; stroke-width: 3px }' +
+            ' text { font-family: "monospace" }' +
+            ']]>'
+        ]
         ];
         var cache = lut4cache();
         inits.forEach(function (data, i) {
@@ -87,8 +87,8 @@ describe('lut4', function () {
             res.push(['g', {
                 transform: 'translate(32,' + (32 * i) + ')'
             },
-                cache[data],
-                ['text', { x: 96, y: 24 }, toString2_16(data)]
+            cache[data],
+            ['text', { x: 96, y: 24 }, toString2_16(data)]
             ]);
         });
         fs.writeFile('test.svg', onml.s(svg(res)), done);
